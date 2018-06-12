@@ -1,0 +1,8 @@
+.tone {
+    color: var(--primary-color);    /* Using global constants example */
+}
+
+.link {
+    composes: tone;                 /* Composition example */
+    text-decoration: none;
+}
