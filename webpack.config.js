@@ -1,5 +1,5 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+//const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
 
     watch: true,
@@ -18,20 +18,28 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['react']
-                }
+                exclude:/node_modules/,
+                use: ['babel-loader']
             },
+            // {
+            //     test: /\.css$/,
+            //     loader: ExtractTextPlugin.extract({
+            //       loader: 'css-loader',
+            //       options: {
+            //         modules: true
+            //       }
+            //     })
+            // },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                  loader: 'css-loader',
-                  options: {
-                    modules: true
-                  }
-                })
-            },
+                test: /\.(css|scss)$/,
+                use: [  
+                  'style-loader',
+                  MiniCssExtractPlugin.loader, 
+                  'css-loader',
+                  'postcss-loader',
+                  'sass-loader'
+                ]
+              },
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
@@ -43,11 +51,14 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin({
-            filename: 'bundle.css',
-            disable: false,
-            allChunks: true
-        })
+        // new ExtractTextPlugin({
+        //     filename: 'bundle.css',
+        //     disable: false,
+        //     allChunks: true
+        // })
+        new MiniCssExtractPlugin({
+            filename: "bundle.css"
+          })
     ],
 
     resolve: {

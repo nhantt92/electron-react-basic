@@ -1,41 +1,37 @@
-._1WcHgGtKrxqKCsGYj62eVK {
-    height: 100px;
-}.sFVP9dDAE84wfL1CUC_NG {
-    color: var(--primary-color);    /* Using global constants example */
-}
+.logo {
+  height: 100px; }
 
-._1FRk9e-PmvCebL7xwPN-Hf {                 /* Composition example */
-    text-decoration: none;
-}/*
+body {
+  background-color: royalblue; }
+
+/*
  * Global constants goes here
  */
- :root {
-    --primary-color: #42b983;
-}
-
+:root {
+  --primary-color: #42b983; }
 
 /*
  * Global CSS goes here, it requires to use :global before each style
  */
 html {
-    height: 100%;
-}
+  height: 100%; }
+
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    margin: auto;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: auto; }
+
 #app {
-    color: #2c3e50;
-    max-width: 600px;
-    font-family: Source Sans Pro, Helvetica, sans-serif;
-    text-align: center;
-}
+  color: #2c3e50;
+  max-width: 600px;
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  text-align: center; }
+
 #app p {
-    text-align: justify;
-}
+  text-align: justify; }
+
 .hello {
-    color: var(--primary-color);
-}
+  color: var(--primary-color); }
+

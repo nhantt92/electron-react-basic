@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { ipcRenderer } from 'electron';
+import Button from '@material-ui/core/Button';
+import './Ping.scss';
 
 export default class Ping extends Component {
     constructor(props) {
@@ -27,6 +29,7 @@ export default class Ping extends Component {
         return (
             <div>
                 <h1> Test IPCModule</h1>
+                <Button color="primary"> Hello </Button>
                 <button onClick={this.handleOnClick}>Ping Main</button>
             </div>
         )

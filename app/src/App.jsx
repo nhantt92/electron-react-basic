@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Logo from './components/Logo/index';
-import Link from './components/Link/index';
 import Ping from './components/Ping/Ping';
 
 import ElectronImg from './assets/electron.png';
